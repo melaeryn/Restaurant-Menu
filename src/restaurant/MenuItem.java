@@ -11,6 +11,8 @@ public class MenuItem {
     private Date added = new Date();
     private boolean isNew = false;
 
+
+
     public MenuItem(String name, double price, String cat, String description) {
         this.name = name;
         this.menuPrice = price;
@@ -18,7 +20,17 @@ public class MenuItem {
         this.description = description;
         isNew = true;
     }
+    public String getName() {
+        return name;
+    }
 
+    public boolean equals(MenuItem compare){
+        if(this.name == compare.getName() && this.description == compare.getDescription() &&
+        this.menuPrice == compare.getPrice() && this.category == compare.getCategory()){
+            return true;
+        }
+        return false;
+    }
     //gets and sets price.
     public double getPrice() {
         return this.menuPrice;
